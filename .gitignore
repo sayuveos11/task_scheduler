@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python bytecode and cache files
 __pycache__/
 *.py[cod]
@@ -17,3 +18,7 @@ env/
 
 # Environment variables and local secrets
 .env
+=======
+__pycache__/
+*.py[cod]
+>>>>>>> 7323501b7e0b0cc5abf203a99c0f89611ea8d95f
