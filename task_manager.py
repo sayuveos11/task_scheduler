@@ -14,10 +14,12 @@ class TaskManager:
 
     def show_tasks(self):
         for task in self.tasks:
+            print("-" * 40) 
             print(f"ID: {task.id}")
             print(f"Title: {task.title}")
             print(f"Description: {task.description}")
             print(f"Completed: {task.completed}")
+            print("-" * 40) 
             print()
 
     def find_task(self, task_id):
