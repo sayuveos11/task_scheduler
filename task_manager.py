@@ -4,9 +4,13 @@ class TaskManager:
 
     def __init__(self):
         self.tasks = []
+        self.next_id = 1
 
     def add_task(self, task):
+        task.id = self.next_id
         self.tasks.append(task)
+        self.next_id += 1
+
 
     def show_tasks(self):
         for task in self.tasks:
@@ -41,22 +45,35 @@ class TaskManager:
 
 
 # task_1 = Task(
-#     1, 
 #     "Learn Python",
 #     "Study classes"
 # )
 
 # task_2 = Task(
-#     2, 
 #     "Learn Java", 
+#     "Study classes"
+# )
+
+# task_3 = Task(
+#     "Learn C++", 
+#     "Study classes"
+# )
+
+# task_4 = Task(
+#     "Learn Ruby", 
 #     "Study classes"
 # )
 
 # manager = TaskManager()
 # manager.add_task(task_1)
 # manager.add_task(task_2)
+# manager.add_task(task_3)
+# manager.add_task(task_4)
 
-# manager.complete_task(2)
+# manager.show_tasks()
+
+# manager.delete_task(2)
+# manager.complete_task(4)
 # manager.update_task(1, title="Learn Python OOP")
 
 # manager.show_tasks()
