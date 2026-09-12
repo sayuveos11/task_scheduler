@@ -34,5 +34,29 @@ while program_working:
     elif user_input == 2:
         manager.show_tasks()
 
+    elif user_input == 3:
+        manager.show_completed_tasks()
+
+    elif user_input == 4:
+        manager.show_active_tasks()
+
+    elif user_input == 5:
+        task_id = int(input("Enter task`s id: "))
+        manager.complete_task(task_id)
+        print("Task set as complete")
+
+    elif user_input == 6:
+        task_id = int(input("Enter task`s id: "))
+
+        title = input("Enter new title (leave empty to keep current): ")
+        description = input("Enter new description (leave empty to keep current): ")
+
+        manager.update_task(task_id, title, description)
+
+    elif user_input == 7:
+        task_id = int(input("Enter task`s id: "))
+        manager.delete_task(task_id)
+        print("Task was deleted")
+
     elif user_input == 0:
         program_working = False

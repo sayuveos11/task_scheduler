@@ -22,6 +22,25 @@ class TaskManager:
             print("-" * 40) 
             print()
 
+    def show_task(self, task):
+        print("-" * 40) 
+        print(f"ID: {task.id}")
+        print(f"Title: {task.title}")
+        print(f"Description: {task.description}")
+        print(f"Completed: {task.completed}")
+        print("-" * 40) 
+        print()
+
+    def show_completed_tasks(self):
+        for task in self.tasks:
+            if task.completed:
+                self.show_task(task)
+
+    def show_active_tasks(self):
+        for task in self.tasks:
+            if not task.completed:
+                self.show_task(task)
+    
     def find_task(self, task_id):
         for task in self.tasks:
             if task_id == task.id:
@@ -44,38 +63,3 @@ class TaskManager:
 
         if description:
             task.description = description
-
-
-# task_1 = Task(
-#     "Learn Python",
-#     "Study classes"
-# )
-
-# task_2 = Task(
-#     "Learn Java", 
-#     "Study classes"
-# )
-
-# task_3 = Task(
-#     "Learn C++", 
-#     "Study classes"
-# )
-
-# task_4 = Task(
-#     "Learn Ruby", 
-#     "Study classes"
-# )
-
-# manager = TaskManager()
-# manager.add_task(task_1)
-# manager.add_task(task_2)
-# manager.add_task(task_3)
-# manager.add_task(task_4)
-
-# manager.show_tasks()
-
-# manager.delete_task(2)
-# manager.complete_task(4)
-# manager.update_task(1, title="Learn Python OOP")
-
-# manager.show_tasks()
