@@ -1,4 +1,5 @@
 from task import Task
+from priority import Priority
 
 class TaskManager:
 
@@ -11,17 +12,9 @@ class TaskManager:
         self.tasks.append(task)
         self.next_id += 1
 
-
     def show_tasks(self):
         for task in self.tasks:
-            print("-" * 40) 
-            print(f"ID: {task.id}")
-            print(f"Title: {task.title}")
-            print(f"Description: {task.description}")
-            print(f"Completed: {task.completed}")
-            print(f"Deadline: {task.deadline}")
-            print("-" * 40) 
-            print()
+            self.show_task(task)
 
     def show_task(self, task):
         print("-" * 40) 
@@ -30,6 +23,12 @@ class TaskManager:
         print(f"Description: {task.description}")
         print(f"Completed: {task.completed}")
         print(f"Deadline: {task.deadline}")
+
+        if task.priority:
+            print(f"Priority: {task.priority.name}")
+        else:
+            print("Priority: None")
+
         print("-" * 40) 
         print()
 
@@ -69,3 +68,7 @@ class TaskManager:
     def set_deadline(self, task_id, deadline):
         task = self.find_task(task_id)
         task.deadline = deadline
+
+    def set_priority(self, task_id, priority):
+        task = self.find_task(task_id)
+        task.priority = Priority(priority)

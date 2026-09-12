@@ -6,6 +6,7 @@ class Task:
         self.description = description
         self.completed = False
         self.deadline = None
+        self.priority = None
 
     def mark_completed(self):
         self.completed = True

@@ -17,6 +17,7 @@ while program_working:
         6. Update task
         7. Delete task
         8. Set deadline
+        9. Set priority
         0. Exit
 
     """)
@@ -66,6 +67,18 @@ while program_working:
 
         manager.set_deadline(task_id, deadline)
         print("Deadline was set")
+
+    elif user_input == 9:
+        task_id = int(input("Enter task`s id: "))
+        priority = int(input("""
+        Choose priority:
+        1. Low
+        2. Medium
+        3. High
+
+        
+        """))   
+        manager.set_priority(task_id, priority)
 
     elif user_input == 0:
         program_working = False
