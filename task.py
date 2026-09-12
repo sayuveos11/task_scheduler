@@ -5,6 +5,7 @@ class Task:
         self.title = title
         self.description = description
         self.completed = False
+        self.deadline = None
 
     def mark_completed(self):
         self.completed = True

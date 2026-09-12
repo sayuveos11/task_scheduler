@@ -1,5 +1,6 @@
 from task import Task
 from task_manager import TaskManager
+from datetime import datetime
 
 manager = TaskManager()
 program_working = True
@@ -15,6 +16,7 @@ while program_working:
         5. Complete task
         6. Update task
         7. Delete task
+        8. Set deadline
         0. Exit
 
     """)
@@ -57,6 +59,13 @@ while program_working:
         task_id = int(input("Enter task`s id: "))
         manager.delete_task(task_id)
         print("Task was deleted")
+
+    elif user_input == 8:
+        task_id = int(input("Enter task`s id: "))
+        deadline = datetime.strptime(input("Enter deadline (YYYY-MM-DD): "), "%Y-%m-%d")
+
+        manager.set_deadline(task_id, deadline)
+        print("Deadline was set")
 
     elif user_input == 0:
         program_working = False

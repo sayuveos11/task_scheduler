@@ -19,6 +19,7 @@ class TaskManager:
             print(f"Title: {task.title}")
             print(f"Description: {task.description}")
             print(f"Completed: {task.completed}")
+            print(f"Deadline: {task.deadline}")
             print("-" * 40) 
             print()
 
@@ -28,6 +29,7 @@ class TaskManager:
         print(f"Title: {task.title}")
         print(f"Description: {task.description}")
         print(f"Completed: {task.completed}")
+        print(f"Deadline: {task.deadline}")
         print("-" * 40) 
         print()
 
@@ -63,3 +65,7 @@ class TaskManager:
 
         if description:
             task.description = description
+
+    def set_deadline(self, task_id, deadline):
+        task = self.find_task(task_id)
+        task.deadline = deadline
